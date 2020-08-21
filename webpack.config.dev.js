@@ -13,11 +13,14 @@ export default {
     publicPath: '/',
     filename: 'bundle.js'
   },
+  devServer: {
+    contentBase: path.resolve(__dirname, 'src')
+  },
   plugins: [],
   module: {
     loaders: [
       {test: /\.js$/, exclude: /node_modules/, loaders: ['babel']},
-      {test: /\.css$/, loader: ['style', 'css']}
+      {test: /\.css$/, loaders: ['style', 'css']}
     ]
   }
 }
